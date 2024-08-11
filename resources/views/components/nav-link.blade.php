@@ -1,0 +1,1 @@
+<a {{ $attributes }} class="rounded-md px-3 py-2 {{ $active ? 'bg-gray-900 text-white ' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} text-sm font-medium" aria-current="{{ $active }}">{{ $slot }}</a>
