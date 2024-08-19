@@ -17,9 +17,10 @@ Route::get('/posts', function(){
     return view('posts', ["title" => "Blog Page", 'posts' => Post::all()]);
 });
 
-Route::get('/posts/{slug}', function($slug){
+//slug representasi dari nama tabel
+Route::get('/posts/{post:slug}', function(Post $post){
     //mengambil id dari posts
-    $post = Post::find($slug);
+    // $post = Post::find($post);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
