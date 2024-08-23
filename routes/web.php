@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,12 @@ Route::get('/posts/{post:slug}', function(Post $post){
     //mengambil id dari posts
     // $post = Post::find($post);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
+});
+
+Route::get('/authors/{user}', function(User $user){
+    //mengambil id dari posts
+    // $post = Post::find($post);
+    return view('posts', ['title' => 'Articles by '. $user->name, 'posts' => $user->posts]);
 });
 
 Route::get('/contact', function(){
