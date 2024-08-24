@@ -15,27 +15,32 @@ class CategorySeeder extends Seeder
     {
         Category::create([
             "category" => 'Web Programming',
-            'slug' => 'web-programming'
+            'slug' => 'web-programming',
+            'color'=> 'blue'
         ]);
 
         Category::create([
             "category" => 'Machine Learning',
-            'slug' => 'machine-learning'
+            'slug' => 'machine-learning',
+            'color'=> 'red'
         ]);
 
         Category::create([
             "category" => 'Data Structure',
-            'slug' => 'data-structure'
+            'slug' => 'data-structure',
+            'color'=> 'green'
         ]);
 
         Category::create([
             "category" => 'Web Desain',
-            'slug' => 'web-desain'
+            'slug' => 'web-desain',
+            'color'=> 'yellow'
         ]);
 
         Category::create([
             "category" => 'UI UX',
-            'slug' => 'ui-ux'
+            'slug' => 'ui-ux',
+            'color'=> 'purple'
         ]);
     }
 }

@@ -10,16 +10,16 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
-    public function run(): void
-    {
-        // User::factory(10)->create();
-        $this->call([ UserSeeder::class]);
-        Post::factory(100)->recycle([
-            Category::all(),
-            User::all()
-        ]) ->create();
-    }
+	/**
+	 * Seed the application's database.
+	 */
+	public function run(): void
+	{
+		// User::factory(10)->create();
+		$this->call([ UserSeeder::class, CategorySeeder::class]);
+		Post::factory(100)->recycle([
+			Category::all(),
+			User::all()
+		]) ->create();
+	}
 }
