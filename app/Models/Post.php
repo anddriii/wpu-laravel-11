@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Post extends Model{
     use HasFactory;
     protected $fillable = ['title', 'author', 'slug', 'category', 'body'];
+
+    //eager loading Default
+    protected $with = ['author', 'category'];
+
     public function author(): BelongsTo{
         return $this->belongsTo(User::class);
     }
