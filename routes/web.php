@@ -18,8 +18,7 @@ Route::get('/about', function () {
 Route::get('/posts', function(){
     //mengatasi N + 1 problem  // agar query lebih sedikit
     // $posts = Post::with(['author', 'category'])->latest()->get();
-    $posts = Post::latest()->get();
-    return view('posts', ["title" => "Blog Page", 'posts' => $posts]);
+    return view('posts', ["title" => "Blog Page", 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]);
 });
 
 //slug representasi dari nama tabel
